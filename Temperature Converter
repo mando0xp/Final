@@ -36,7 +36,12 @@ int main()
 		fahr = (1.8 * celc) + 32.0; //Celcius to Fahernheit
 		cout << "\nTemperature in degree Fahrenheit: " << fahr << " F" << endl;
 	}
-	else (option == 3);
-	cout << "\nExit." << endl;
-
+	else if (option == 3)
+	{
+		cout << "\nExit." << endl;
+	}
+	else
+	{
+		cout << "\nInvalid Entry" << endl;
+	}
 	return 0;
