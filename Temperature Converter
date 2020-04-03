@@ -1,0 +1,43 @@
+// The Temperature Converter
+//Created by Benjamin Gray 03/29/2020
+
+#include <iostream>
+#include <string>
+#include <fstream>
+using namespace std;
+int main()
+{
+	//variables
+	double fahr;
+	double celc;
+	char option;
+	string name;
+
+	cout << "Please enter name: ";
+	cin >> name;
+	cout << "Welcome " << name << " to the Temperature Converter Application." << endl; 
+	cout << "Type '1' for Fahrenheit to Celsius conversion." << endl;
+	cout << "Type '2' for Celsius to Fahrenheit conversion." << endl;
+	cout << "Type '3' to exit the program." << endl;
+	cin >> option;
+	
+	if (option == '1')
+	{
+		cout << "Enter the temperature in Fahrenheit: ";
+		cin >> fahr;
+		celc = (fahr - 32) / 1.8; //Fahrenheit to Celcius
+		cout << "Temperature in degree Celsius: " << celc << " C" << endl;
+	}
+	else if (option == '2')
+	{
+		cout << "Enter the temperature in Celsius: ";
+		cin >> celc;
+
+		fahr = (1.8 * celc) + 32.0; //Celcius to Fahernheit
+		cout << "Temperature in degree Fahrenheit: " << fahr << " F" << endl;
+	}
+	else (option == '3');
+		cout << "Exit." << endl;
+	
+	return 0;
+}
