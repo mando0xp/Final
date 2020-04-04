@@ -4,6 +4,7 @@
 #include <iostream>
 #include <string>
 #include <fstream>
+#include <iomanip>
 using namespace std;
 int main()
 {
@@ -12,36 +13,48 @@ int main()
 	double celc;
 	int option;
 	string name;
+	
+	cout << fixed << setprecision(2);
 
 	cout << "\nPlease enter name: " << endl;
 	cin >> name;
-	cout << "\nWelcome " << name << " to the Temperature Converter Application." << endl;
-	cout << "\nType '1' for Fahrenheit to Celsius conversion." << endl;
-	cout << "\nType '2' for Celsius to Fahrenheit conversion." << endl;
-	cout << "\nType '3' to exit the program." << endl;
-	cin >> option;
+	cout << "\n----------------------------------------------------" << endl;
+		do
+		{
+			cout << "\nWelcome, " << name << ", to the Temperature Converter Application." << endl;
+			cout << "\nType '1' for Fahrenheit to Celsius conversion." << endl;
+			cout << "\nType '2' for Celsius to Fahrenheit conversion." << endl;
+			cout << "\nType '3' to exit the program." << endl;
+			cout << "\n----------------------------------------------------" << endl;
+			cin >> option;
+			
+				if (option == 1)
+				{
+					cout << "\nEnter the temperature in Fahrenheit: ";
+					cin >> fahr;
+					cout << "\nComputing to Celcius..." << endl;
+					celc = (fahr - 32) / 1.8; //Fahrenheit to Celcius
+					cout << "\nTemperature in degree Celsius: " << celc << " C" << endl;
+				}
+					else if (option == 2)
+				{
+					cout << "\nEnter the temperature in Celsius: ";
+					cin >> celc;
+					cout << "\nComputing to Farhenheit..." << endl;
+					fahr = (1.8 * celc) + 32.0; //Celcius to Fahernheit
+					cout << "\nTemperature in degree Fahrenheit: " << fahr << " F" << endl;
+				}
+					else if (option == 3)
+				{
+					return 0;
+				}
+					else
+				{
+					cout << "\nInvalid entry, " << name << ", please pick another option." << endl;
+					cout << "\n----------------------------------------------------" << endl;
+				}
+		} while (option > 0 || option <= 3);
 
-	if (option == 1)
-	{
-		cout << "\nEnter the temperature in Fahrenheit: ";
-		cin >> fahr;
-		celc = (fahr - 32) / 1.8; //Fahrenheit to Celcius
-		cout << "\nTemperature in degree Celsius: " << celc << " C" << endl;
-	}
-	else if (option == 2)
-	{
-		cout << "\nEnter the temperature in Celsius: ";
-		cin >> celc;
-
-		fahr = (1.8 * celc) + 32.0; //Celcius to Fahernheit
-		cout << "\nTemperature in degree Fahrenheit: " << fahr << " F" << endl;
-	}
-	else if (option == 3)
-	{
-		cout << "\nExit." << endl;
-	}
-	else
-	{
-		cout << "\nInvalid Entry" << endl;
-	}
 	return 0;
+}
+		
