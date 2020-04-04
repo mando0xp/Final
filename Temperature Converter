@@ -21,7 +21,8 @@ int main()
 	cout << "\n----------------------------------------------------" << endl;
 		do
 		{
-		 while (option > 0 || option <= 3);
+		 while (option > 0 || option <= 3)
+		 {
 			cout << "\nWelcome, " << name << ", to the Temperature Converter Application." << endl;
 			cout << "\nType '1' for Fahrenheit to Celsius conversion." << endl;
 			cout << "\nType '2' for Celsius to Fahrenheit conversion." << endl;
@@ -53,6 +54,7 @@ int main()
 				{
 					cout << "\nInvalid entry, " << name << ", please pick another option." << endl;
 					cout << "\n----------------------------------------------------" << endl;
+				}
 				}
 
 	return 0;
