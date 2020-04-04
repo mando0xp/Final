@@ -20,7 +20,28 @@ int main()
 	cin >> name;
 	cout << "\n----------------------------------------------------" << endl;
 		do
-		{
+		{// The Temperature Converter
+//Created by Benjamin Gray 03/29/2020
+
+#include <iostream>
+#include <string>
+#include <fstream>
+#include <iomanip>
+using namespace std;
+int main()
+{
+	//variables
+	double fahr;
+	double celc;
+	int option;
+	string name;
+	
+	cout << fixed << setprecision(2);
+
+	cout << "\nPlease enter name: " << endl;
+	cin >> name;
+	cout << "\n----------------------------------------------------" << endl;
+
 		 while (option > 0 || option <= 3)
 		 {
 			cout << "\nWelcome, " << name << ", to the Temperature Converter Application." << endl;
@@ -51,6 +72,13 @@ int main()
 					return 0;
 				}
 					else
+				{
+					cout << "\nInvalid entry, " << name << ", please pick another option." << endl;
+					cout << "\n----------------------------------------------------" << endl;
+				}
+		 }
+
+}
 				{
 					cout << "\nInvalid entry, " << name << ", please pick another option." << endl;
 					cout << "\n----------------------------------------------------" << endl;
